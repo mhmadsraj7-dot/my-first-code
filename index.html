@@ -3,93 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشروع محمد المطور</title>
+    <title>متجر محمد الإلكتروني</title>
     <style>
-        /* إعدادات الخلفية والتموج الذي طلبته */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
             background: linear-gradient(135deg, #1a3c5a 0%, #a8e6cf 100%);
-            height: 100vh;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
+            padding: 20px;
+            color: white;
+            min-height: 100vh;
         }
-
-        /* حاوية الواجهة (UI Card) */
-        .container {
+        header { text-align: center; padding: 20px; }
+        .shop-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .product-card {
             background: rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            padding: 20px;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.2);
-            max-width: 400px;
-            width: 90%;
-        }
-
-        h1 { margin-bottom: 10px; font-size: 24px; }
-        p { font-size: 16px; opacity: 0.9; line-height: 1.6; }
-
-        /* تنسيق الأزرار (الخيارات) */
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .btn {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
             transition: 0.3s;
-            font-size: 14px;
         }
-
-        .btn-primary { background: #a8e6cf; color: #1a3c5a; }
-        .btn-primary:hover { background: #8cd3ba; transform: translateY(-3px); }
-
-        .btn-outline { 
-            background: transparent; 
-            color: #fff; 
-            border: 2px solid #fff; 
+        .product-card:hover { transform: translateY(-5px); }
+        .product-image {
+            width: 100%;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
         }
-        .btn-outline:hover { background: #fff; color: #1a3c5a; }
-
-        footer { margin-top: 20px; font-size: 12px; opacity: 0.7; }
+        .price { font-size: 20px; font-weight: bold; color: #a8e6cf; }
+        .buy-btn {
+            display: block;
+            background: #a8e6cf;
+            color: #1a3c5a;
+            padding: 10px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .buy-btn:hover { background: #fff; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>مرحباً بك في مشروعي</h1>
-        <p>هذا الموقع تم تطويره بواجهة مستخدم حديثة وألوان متموجة جذابة.</p>
+<header>
+    <h1>متجر محمد 🛍️</h1>
+    <p>أفضل البضائع بأفضل الأسعار</p>
+</header>
 
-        <div class="button-group">
-            <a href="https://www.goodwall.io/tags/ShareMyProject" class="btn btn-primary">تسليم المهمة في Goodwall</a>
-            
-            <button class="btn btn-outline" onclick="changeTheme()">تغيير نمط الألوان</button>
-        </div>
-
-        <footer>صُنع بواسطة محمد | 2026</footer>
+<div class="shop-container">
+    <div class="product-card">
+        <div class="product-image">🖼️ صورة المنتج</div>
+        <h3>اسم البضاعة هنا</h3>
+        <p class="price">50 $</p>
+        <a href="#" class="buy-btn" onclick="alert('تمت الإضافة للسلة!')">شراء الآن</a>
     </div>
 
-    <script>
-        function changeTheme() {
-            const body = document.body;
-            if (body.style.background.includes('#1a3c5a')) {
-                body.style.background = "linear-gradient(135deg, #a8e6cf 0%, #1a3c5a 100%)";
-            } else {
-                body.style.background = "linear-gradient(135deg, #1a3c5a 0%, #a8e6cf 100%)";
-            }
-        }
-    </script>
+    <div class="product-card">
+        <div class="product-image">📦 منتج مميز</div>
+        <h3>بضاعة ثانية</h3>
+        <p class="price">120 $</p>
+        <a href="#" class="buy-btn" onclick="alert('تمت الإضافة للسلة!')">شراء الآن</a>
+    </div>
+</div>
+
+<footer style="text-align: center; margin-top: 50px; opacity: 0.7;">
+    حقوق النشر محفوظة لمتجر محمد 2026
+</footer>
 
 </body>
 </html>
