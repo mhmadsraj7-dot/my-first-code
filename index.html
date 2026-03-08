@@ -3,47 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقعي الاحترافي الأول</title>
+    <title>مشروع محمد المطور</title>
     <style>
+        /* إعدادات الخلفية والتموج الذي طلبته */
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a3c5a 0%, #a8e6cf 100%);
+            height: 100vh;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            color: #fff;
         }
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-            backdrop-filter: blur(4px);
+
+        /* حاوية الواجهة (UI Card) */
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
             text-align: center;
-            width: 300px;
+            border: 1px solid rgba(255,255,255,0.2);
+            max-width: 400px;
+            width: 90%;
         }
+
+        h1 { margin-bottom: 10px; font-size: 24px; }
+        p { font-size: 16px; opacity: 0.9; line-height: 1.6; }
+
+        /* تنسيق الأزرار (الخيارات) */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
         .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: bold;
             text-decoration: none;
-            border-radius: 5px;
             transition: 0.3s;
+            font-size: 14px;
         }
-        .btn:hover {
-            background-color: #0056b3;
+
+        .btn-primary { background: #a8e6cf; color: #1a3c5a; }
+        .btn-primary:hover { background: #8cd3ba; transform: translateY(-3px); }
+
+        .btn-outline { 
+            background: transparent; 
+            color: #fff; 
+            border: 2px solid #fff; 
         }
+        .btn-outline:hover { background: #fff; color: #1a3c5a; }
+
+        footer { margin-top: 20px; font-size: 12px; opacity: 0.7; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>أهلاً بك محمد</h1>
-        <p>هذا أول مشروع لي بواجهة مستخدم مطورة.</p>
-        <a href="https://www.goodwall.io" class="btn">حسابي في Goodwall</a>
+
+    <div class="container">
+        <h1>مرحباً بك في مشروعي</h1>
+        <p>هذا الموقع تم تطويره بواجهة مستخدم حديثة وألوان متموجة جذابة.</p>
+
+        <div class="button-group">
+            <a href="https://www.goodwall.io/tags/ShareMyProject" class="btn btn-primary">تسليم المهمة في Goodwall</a>
+            
+            <button class="btn btn-outline" onclick="changeTheme()">تغيير نمط الألوان</button>
+        </div>
+
+        <footer>صُنع بواسطة محمد | 2026</footer>
     </div>
+
+    <script>
+        function changeTheme() {
+            const body = document.body;
+            if (body.style.background.includes('#1a3c5a')) {
+                body.style.background = "linear-gradient(135deg, #a8e6cf 0%, #1a3c5a 100%)";
+            } else {
+                body.style.background = "linear-gradient(135deg, #1a3c5a 0%, #a8e6cf 100%)";
+            }
+        }
+    </script>
+
 </body>
 </html>
